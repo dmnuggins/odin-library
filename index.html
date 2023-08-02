@@ -4,10 +4,78 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="node_modules/normalize.css/normalize.css" />
+
     <link rel="stylesheet" href="styles.css" />
     <title>Library</title>
   </head>
   <body>
-    <h1>Library</h1>
+    <div class="app">
+      <div class="header-section">
+        <h1>Library</h1>
+        <p>
+          This is a project from The Odin Project, where I have to make a
+          library that allows users to add, delete, and modify books they've
+          read.
+        </p>
+        <p>The project source code can be viewed in the Github repo here.</p>
+      </div>
+      <div class="submit-section">
+        <form action="">
+          <div>
+            <label for="title">Book</label>
+            <input type="text" name="" id="title" />
+          </div>
+          <div>
+            <label for="author">Author</label>
+            <input type="text" name="" id="author" />
+          </div>
+          <div>
+            <label for="read">Status</label>
+            <select type="text" name="" id="read">
+              <option value="read">Read</option>
+              <option value="not read">Not read</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="w-full">
+        <table id="myLibrary">
+          <thead class="bg-gray-50 border-b-2 border-gray-200">
+            <tr>
+              <th>Book</th>
+              <th>Author</th>
+              <th>Pages</th>
+              <th>Read</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A Series of Unfortunate Events</td>
+              <td>Lemony Snicket</td>
+              <td>321</td>
+              <td><button>Read</button></td>
+              <td><button type="submit">Delete</button></td>
+            </tr>
+            <tr>
+              <td>Naruto</td>
+              <td>Masashi Kishimoto</td>
+              <td>192</td>
+              <td><button>Read</button></td>
+              <td><button type="submit">Delete</button></td>
+            </tr>
+            <tr>
+              <td>Full Metal Alchemist: Brotherhood</td>
+              <td>Hiromu Arakawa</td>
+              <td>576</td>
+              <td><button>Read</button></td>
+              <td><button type="submit">Delete</button></td>
+            </tr>
+          </tbody>
+          <tfoot></tfoot>
+          <colgroup></colgroup>
+        </table>
+      </div>
+    </div>
   </body>
 </html>

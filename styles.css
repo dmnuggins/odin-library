@@ -1,4 +1,19 @@
-h1 {
-  font-size: 3em;
-  margin: 0.67em 0;
+form {
+  display: flex;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+.app {
+  width: 75%;
 }
