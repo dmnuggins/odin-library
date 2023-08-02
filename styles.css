@@ -1,6 +1,34 @@
+/* APP */
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: 75%;
+}
+
+/* FORM SUBMIT */
+
+.submit-section {
+  margin-bottom: 2rem;
+}
+
 form {
   display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
 }
+
+.form-book,
+.form-author,
+.form-status {
+  display: flex;
+  flex-direction: column;
+}
+
+/* TABLE */
 
 table {
   width: 100%;
@@ -8,12 +36,4 @@ table {
 
 th {
   text-align: left;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-}
-.app {
-  width: 75%;
 }

@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="styles.css" />
     <title>Library</title>
+    <script src="main.js" defer></script>
   </head>
   <body>
     <div class="app">
@@ -21,22 +22,28 @@
       </div>
       <div class="submit-section">
         <form action="">
-          <div>
+          <div class="form-book">
             <label for="title">Book</label>
             <input type="text" name="" id="title" />
           </div>
-          <div>
+          <div class="form-author">
             <label for="author">Author</label>
             <input type="text" name="" id="author" />
           </div>
-          <div>
-            <label for="read">Status</label>
-            <select type="text" name="" id="read">
+          <div class="form-pages">
+            <label for="pages">Pages</label>
+            <input type="number" name="" id="pages" />
+          </div>
+          <div class="form-status">
+            <label for="status">Status</label>
+            <select type="text" name="" id="status">
+              <option value=""></option>
               <option value="read">Read</option>
               <option value="not read">Not read</option>
             </select>
           </div>
         </form>
+        <button type="submit" id="submit">Submit</button>
       </div>
       <div class="w-full">
         <table id="myLibrary">
@@ -49,27 +56,27 @@
               <th></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="table-body">
             <tr>
               <td>A Series of Unfortunate Events</td>
               <td>Lemony Snicket</td>
               <td>321</td>
-              <td><button>Read</button></td>
-              <td><button type="submit">Delete</button></td>
+              <td><button class="status-btn">Read</button></td>
+              <td><button class="delete-btn">Delete</button></td>
             </tr>
             <tr>
               <td>Naruto</td>
               <td>Masashi Kishimoto</td>
               <td>192</td>
-              <td><button>Read</button></td>
-              <td><button type="submit">Delete</button></td>
+              <td><button class="status-btn">Read</button></td>
+              <td><button class="delete-btn">Delete</button></td>
             </tr>
             <tr>
               <td>Full Metal Alchemist: Brotherhood</td>
               <td>Hiromu Arakawa</td>
               <td>576</td>
-              <td><button>Read</button></td>
-              <td><button type="submit">Delete</button></td>
+              <td><button class="status-btn">Read</button></td>
+              <td><button class="delete-btn">Delete</button></td>
             </tr>
           </tbody>
           <tfoot></tfoot>
