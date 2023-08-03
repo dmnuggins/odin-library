@@ -20,6 +20,9 @@ const DEFAULT_DATA = [
   },
 ];
 
+// temp data set
+library = DEFAULT_DATA;
+
 // DOM
 const bookTitle = document.getElementById("title");
 const bookAuthor = document.getElementById("author");
@@ -27,18 +30,27 @@ const bookPages = document.getElementById("pages");
 const bookStatus = document.getElementById("status");
 const submitBtn = document.getElementById("submit");
 const tableBody = document.getElementById("table-body");
+const table = document.querySelector("table");
 
 // console.log(bookName, "\n", bookAuthor, "\n", bookStatus);
-
+renderTable();
 // Listeners
+table.addEventListener("click", (e) => {
+  const clickedElement = e.target;
+
+  if (clickedElement.classList.contains("status-btn")) {
+    const row = clickedElement.closest("tr");
+    console.log(row);
+  } else if (clickedElement.classList.contains("delete-btn")) {
+    const row = clickedElement.closest("tr");
+    // handle data deletion in library
+    console.log(row);
+    row.remove();
+  }
+});
 submitBtn.addEventListener("click", () => {
   handleSubmit();
 });
-
-// temp data set
-library = DEFAULT_DATA;
-
-console.log(library);
 
 class Book {
   constructor(title, author, pages, status) {
@@ -99,5 +111,3 @@ function renderTable() {
     tableBody.insertAdjacentHTML("afterbegin", htmlBook);
   });
 }
-
-renderTable();
