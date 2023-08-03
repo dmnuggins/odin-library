@@ -5,23 +5,28 @@ const DEFAULT_DATA = [
     author: "Epictetus",
     pages: "321",
     status: "read",
+    key: "1",
   },
   {
     title: "Alice in Wonderland",
     author: "Lewis Caroll",
     pages: "241",
     status: "not read",
+    key: "2",
   },
   {
     title: "Naruto: Shippuden",
     author: "Masashi Kishimoto",
     pages: "576",
     status: "read",
+    key: "3",
   },
 ];
 
 // temp data set
 library = DEFAULT_DATA;
+
+const bookCount = {};
 
 // DOM
 const bookTitle = document.getElementById("title");
@@ -44,7 +49,10 @@ table.addEventListener("click", (e) => {
   } else if (clickedElement.classList.contains("delete-btn")) {
     const row = clickedElement.closest("tr");
     // handle data deletion in library
+    const bookKey = row.id;
+    removeBookFromLibrary(findBook(bookKey));
     console.log(row);
+    console.log(library);
     row.remove();
   }
 });
@@ -85,9 +93,20 @@ function addBookToLibrary(book) {
   renderTable();
 }
 
-function removeBookFromLibrary(book) {}
+function removeBookFromLibrary(book) {
+  library.splice(book, 1);
+}
 
-function findBook(book) {}
+function findBook(bookKey) {
+  if (library.length === 0 || library === null) {
+    return;
+  }
+  library.forEach((book) => {
+    if (book.key === bookKey) {
+      return library.indexOf(book);
+    }
+  });
+}
 
 function updateBookStatus() {
   // update status when Read/Unread button is clicked
@@ -97,8 +116,11 @@ function renderTable() {
   tableBody.innerHTML = "";
 
   library.forEach((book) => {
+    const bookKey = `${book.title}_${book.author}_${book.pages}`;
+    bookCount[bookKey] = (bookCount[bookKey] || 0) + 1;
+
     const htmlBook = `
-    <tr>
+    <tr id="${book.key}">
       <td>${book.title}</td>
       <td>${book.author}</td>
       <td>${book.pages}</td>
